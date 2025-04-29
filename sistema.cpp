@@ -1,14 +1,8 @@
 #include <iostream>
 #include <string>
+#include "cliente.h"
+#include "contabancaria.h"
 using namespace std;
-
-class Cliente {
-/// ???
-};
-
-class ContaBancaria {
-/// ???
-};
 
 int main() {
     // Criação dos clientes
