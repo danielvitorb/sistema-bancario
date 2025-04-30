@@ -1,5 +1,3 @@
-#ifndef CONTABANCARIA_H
-#define CONTABANCARIA_H
 #include "contabancaria.h"
 #include <iostream>
 
@@ -70,5 +68,3 @@ void ContaBancaria::transferir(double valor, ContaBancaria &destino1, ContaBanca
         destino2.depositar(valor / 2);
     }
 }
-
-#endif

@@ -1,3 +1,5 @@
+#ifndef CONTABANCARIA_H
+#define CONTABANCARIA_H
 #include "cliente.h"
 
 class ContaBancaria {
@@ -18,3 +20,5 @@ class ContaBancaria {
         void transferir(double valor, ContaBancaria &destino);
         void transferir(double valor, ContaBancaria &destino1, ContaBancaria &destino2);
 };
+
+#endif
