@@ -7,10 +7,14 @@ class ContaBancaria {
         Cliente titular;
     
     public:
+        ContaBancaria(int numero, Cliente titular);
+        ContaBancaria(int numero, Cliente titular, double saldo);
+        int getNumero();
+        double getSaldo();
         void depositar(double valor);
         void sacar(double valor);
         void exibirSaldo();
         void exibirInformacoes();
-        ContaBancaria(int numero, Cliente titular);
-        ContaBancaria(int numero, Cliente titular, double saldo);
+        void transferir(double valor, ContaBancaria &destino);
+        void transferir(double valor, ContaBancaria &destino1, ContaBancaria &destino2);
 };
