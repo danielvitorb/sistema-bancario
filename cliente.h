@@ -9,4 +9,5 @@ class Cliente {
     public:
         string getNome();
         string getCpf();
+        Cliente(string nome, string cpf);
 };
