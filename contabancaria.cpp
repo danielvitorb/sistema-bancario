@@ -40,7 +40,7 @@ void ContaBancaria::sacar(double valor){
 }
 
 void ContaBancaria::exibirSaldo(){
-    cout << "Saldo atual da conta " << getNumero() << " : R$ "  << getSaldo() << endl;
+    cout << "Saldo atual da conta " << numero << " : R$ "  << saldo << endl;
 }
 
 void ContaBancaria::exibirInformacoes(){
@@ -55,6 +55,7 @@ void ContaBancaria::transferir(double valor, ContaBancaria &destino){
     } else {
         saldo -= valor;
         destino.depositar(valor);
+        cout << "Transferido: R$ " << valor << " da conta " << numero << " para a conta " << destino.numero << endl;
     }
 }
 
@@ -66,5 +67,6 @@ void ContaBancaria::transferir(double valor, ContaBancaria &destino1, ContaBanca
         saldo -= valor;
         destino1.depositar(valor / 2);
         destino2.depositar(valor / 2);
+        cout << "Transferido: R$ " << valor << " para cada conta (" << destino1.numero << " e " << destino2.numero << ") da conta " << numero << endl;
     }
 }

@@ -1,25 +1,29 @@
-# Nome do executável final
-TARGET = sistemabancario
+# Nome do executável
+EXEC = sistema.exe
 
-# Compilador e flags
+# Compilador
 CXX = g++
-CXXFLAGS = -Wall -std=c++11
 
-# Fontes e objetos
-SRCS = sistemabancario.cpp contabancaria.cpp cliente.cpp
+# Flags de compilação
+CXXFLAGS = -Wall -std=c++17
+
+# Arquivos-fonte
+SRCS = sistema.cpp contabancaria.cpp cliente.cpp
+
+# Objetos (opcional, se quiser compilar por etapas)
 OBJS = $(SRCS:.cpp=.o)
 
 # Regra padrão
-all: $(TARGET)
+all: $(EXEC)
 
-# Regra para compilar o programa final
-$(TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $(OBJS)
-
-# Regra para compilar arquivos .cpp individualmente
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+# Regra de compilação
+$(EXEC): $(SRCS)
+	$(CXX) $(CXXFLAGS) -o $(EXEC) $(SRCS)
 
 # Limpar arquivos gerados
 clean:
-	rm -f *.o $(TARGET)
+	del /Q *.o *.exe 2>nul
+
+# Apenas limpar o executável
+clean-exe:
+	del /Q $(EXEC) 2>nul
