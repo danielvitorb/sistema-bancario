@@ -13,6 +13,14 @@ ContaBancaria::ContaBancaria(int numero, Cliente titular, double saldo){
     this->saldo = saldo;
 }
 
+void ContaBancaria::setNumero(int numero){
+    this->numero = numero;
+}
+
+void ContaBancaria::setSaldo(double valor){
+    saldo = valor;
+}
+
 int ContaBancaria::getNumero(){
     return numero;
 }

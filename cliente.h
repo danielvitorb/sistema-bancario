@@ -11,6 +11,8 @@ class Cliente {
     public:
         string getNome();
         string getCpf();
+        void setNome(string nome);
+        void setCpf(string cpf);
         Cliente();
         Cliente(string nome, string cpf);
 };

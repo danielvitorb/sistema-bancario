@@ -17,3 +17,11 @@ string Cliente::getNome(){
 string Cliente::getCpf(){
     return cpf;
 }
+
+void Cliente::setNome(string nome){
+    this->nome = nome;
+}
+
+void Cliente::setCpf(string cpf){
+    this->cpf = cpf;
+}

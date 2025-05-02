@@ -11,6 +11,8 @@ class ContaBancaria {
     public:
         ContaBancaria(int numero, Cliente titular);
         ContaBancaria(int numero, Cliente titular, double saldo);
+        void setNumero(int numero);
+        void setSaldo(double saldo);
         int getNumero();
         double getSaldo();
         void depositar(double valor);
