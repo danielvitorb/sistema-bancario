@@ -39,7 +39,7 @@ void ContaBancaria::depositar(double valor){
 }
 
 void ContaBancaria::sacar(double valor){
-    if (saldo <= 0)
+    if (saldo < valor)
     {
         cout << "Não é possível sacar esse valor.";
     } else {
