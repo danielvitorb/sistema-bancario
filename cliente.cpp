@@ -1,5 +1,6 @@
 #include "cliente.h"
 
+// Implementação dos construtores, sendo um parametrizado e outro não
 Cliente::Cliente(){
     cpf = "";
     nome = "";

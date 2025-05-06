@@ -26,6 +26,7 @@ class ContaBancaria {
         void exibirSaldo();
         void exibirInformacoes();
 
+        // Métodos de operações a ser realizadas pelo titular da conta
         void depositar(double valor);
         void sacar(double valor);
         void transferir(double valor, ContaBancaria &destino);
