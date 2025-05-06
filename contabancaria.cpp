@@ -35,7 +35,6 @@ void ContaBancaria::depositar(double valor){
         cout << "Não é possível depositar esse valor." << endl;
     } else {
         saldo += valor;
-        cout << "Depósito realizado!" << endl;
     }
 }
 
@@ -45,7 +44,6 @@ void ContaBancaria::sacar(double valor){
         cout << "Saldo insuficiente." << endl;
     } else {
         saldo -= valor;
-        cout << "Saque realizado!" << endl;
     }
 }
 

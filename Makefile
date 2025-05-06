@@ -1,29 +1,30 @@
-# Nome do executável
-EXEC = sistema.exe
+# Variáveis
+CC = g++                        # Compilador
+CFLAGS = -Wall -O2              # Flags do compilador
+OBJ = sistema.o contabancaria.o cliente.o   # Objetos
+EXEC = sistema.exe              # Nome do arquivo executável
 
-# Compilador
-CXX = g++
-
-# Flags de compilação
-CXXFLAGS = -Wall -std=c++17
-
-# Arquivos-fonte
-SRCS = sistema.cpp contabancaria.cpp cliente.cpp
-
-# Objetos (opcional, se quiser compilar por etapas)
-OBJS = $(SRCS:.cpp=.o)
-
-# Regra padrão
+# Regra principal
 all: $(EXEC)
 
-# Regra de compilação
-$(EXEC): $(SRCS)
-	$(CXX) $(CXXFLAGS) -o $(EXEC) $(SRCS)
+# Como gerar o executável
+$(EXEC): $(OBJ)
+	$(CC) $(OBJ) -o $(EXEC)
 
-# Limpar arquivos gerados
+# Como gerar os arquivos .o (objetos)
+sistema.o: sistema.cpp contabancaria.h cliente.h
+	$(CC) $(CFLAGS) -c sistema.cpp
+
+contabancaria.o: contabancaria.cpp contabancaria.h cliente.h
+	$(CC) $(CFLAGS) -c contabancaria.cpp
+
+cliente.o: cliente.cpp cliente.h
+	$(CC) $(CFLAGS) -c cliente.cpp
+
+# Limpeza dos arquivos gerados (corrigido para Windows)
 clean:
-	del /Q *.o *.exe 2>nul
+	del /f /q $(OBJ) $(EXEC)
 
-# Apenas limpar o executável
-clean-exe:
-	del /Q $(EXEC) 2>nul
+# Rodar o programa após a compilação
+run: $(EXEC)
+	./$(EXEC)
