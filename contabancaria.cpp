@@ -63,7 +63,7 @@ void ContaBancaria::transferir(double valor, ContaBancaria &destino){
     {
         cout << "Saldo insuficiente." << endl;
     } else {
-        saldo -= valor;
+        sacar(valor);
         destino.depositar(valor);
         cout << "Transferido: R$ " << valor << " da conta " << getNumero() << " para a conta " << destino.getNumero() << endl;
     }
