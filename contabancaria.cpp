@@ -32,23 +32,25 @@ double ContaBancaria::getSaldo(){
 void ContaBancaria::depositar(double valor){
     if (valor <= 0)
     {
-        cout << "Não é possível depositar esse valor.";
+        cout << "Não é possível depositar esse valor." << endl;
     } else {
         saldo += valor;
+        cout << "Depósito realizado!" << endl;
     }
 }
 
 void ContaBancaria::sacar(double valor){
     if (saldo < valor)
     {
-        cout << "Não é possível sacar esse valor.";
+        cout << "Saldo insuficiente." << endl;
     } else {
         saldo -= valor;
+        cout << "Saque realizado!" << endl;
     }
 }
 
 void ContaBancaria::exibirSaldo(){
-    cout << "Saldo atual da conta " << numero << ": R$ "  << saldo << endl;
+    cout << "Saldo atual da conta " << getNumero() << ": R$ "  << getSaldo() << endl;
 }
 
 void ContaBancaria::exibirInformacoes(){
@@ -57,24 +59,24 @@ void ContaBancaria::exibirInformacoes(){
 }
 
 void ContaBancaria::transferir(double valor, ContaBancaria &destino){
-    if (valor <= 0)
+    if (valor > saldo)
     {
-        cout << "Não é possível transferir esse valor" << endl;
+        cout << "Saldo insuficiente." << endl;
     } else {
         saldo -= valor;
         destino.depositar(valor);
-        cout << "Transferido: R$ " << valor << " da conta " << numero << " para a conta " << destino.numero << endl;
+        cout << "Transferido: R$ " << valor << " da conta " << getNumero() << " para a conta " << destino.getNumero() << endl;
     }
 }
 
 void ContaBancaria::transferir(double valor, ContaBancaria &destino1, ContaBancaria &destino2){
-    if (valor <= 0)
+    if (valor > saldo)
     {
-        cout << "Não é possível transferir esse valor" << endl;
+        cout << "Saldo insuficiente." << endl;
     } else {
-        saldo -= valor;
+        sacar(valor);
         destino1.depositar(valor / 2);
         destino2.depositar(valor / 2);
-        cout << "Transferido: R$ " << valor / 2 << " para cada conta (" << destino1.numero << " e " << destino2.numero << ") da conta " << numero << endl;
+        cout << "Transferido: R$ " << valor / 2 << " para cada conta (" << destino1.getNumero() << " e " << destino2.getNumero() << ") da conta " << getNumero() << endl;
     }
 }
