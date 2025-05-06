@@ -4,21 +4,30 @@
 
 class ContaBancaria {
     private:
+        // Atributos privados
         int numero;
         double saldo;
         Cliente titular;
     
     public:
+        // Construtores
         ContaBancaria(int numero, Cliente titular);
         ContaBancaria(int numero, Cliente titular, double saldo);
+
+        // Métodos setters
         void setNumero(int numero);
         void setSaldo(double saldo);
+
+        // Métodos getters
         int getNumero();
         double getSaldo();
-        void depositar(double valor);
-        void sacar(double valor);
+
+        // Métodos de exibição
         void exibirSaldo();
         void exibirInformacoes();
+
+        void depositar(double valor);
+        void sacar(double valor);
         void transferir(double valor, ContaBancaria &destino);
         void transferir(double valor, ContaBancaria &destino1, ContaBancaria &destino2);
 };
