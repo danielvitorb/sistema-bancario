@@ -10,9 +10,8 @@ class ContaBancaria {
         Cliente titular;
     
     public:
-        // Construtores
-        ContaBancaria(int numero, Cliente titular);
-        ContaBancaria(int numero, Cliente titular, double saldo);
+        // Construtor que inicializa o número, titular e, opcionalmente, o saldo (padrão zero).
+        ContaBancaria(int numero, Cliente titular, double saldo = 0);
 
         // Métodos setters
         void setNumero(int numero);
