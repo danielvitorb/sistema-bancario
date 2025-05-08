@@ -52,6 +52,8 @@ void ContaBancaria::transferir(double valor, ContaBancaria &destino){
     if (valor > saldo) // Checa se há saldo suficiente para efetuar a transferência
     {
         cout << "Saldo insuficiente." << endl;
+    } else if (valor <= 0){ // Checa se o valor a ser transferido é maior que 0
+        cout << "Só é possível transferir valores maiores que 0" << endl;
     } else {
         // Utilizando métodos para acessar e modificar atributos privados
         sacar(valor);
@@ -64,6 +66,8 @@ void ContaBancaria::transferir(double valor, ContaBancaria &destino1, ContaBanca
     if (valor > saldo) // Checa se há saldo suficiente para efetuar a transferência
     {
         cout << "Saldo insuficiente." << endl;
+    } else if (valor <= 0){  // Checa se o valor a ser transferido é maior que 0
+        cout << "Só é possível transferir valores maiores que 0" << endl;
     } else {
         // Utilizando métodos para acessar e modificar atributos privados
         sacar(valor);

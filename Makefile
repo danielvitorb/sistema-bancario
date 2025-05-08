@@ -1,8 +1,8 @@
 # Variáveis
-CC = g++                        # Compilador
-CFLAGS = -Wall -O2              # Flags do compilador
+CC = g++                                    # Compilador
+CFLAGS = -Wall -pedantic -O0 -g             # Flags do compilador
 OBJ = sistema.o contabancaria.o cliente.o   # Objetos
-EXEC = sistema.exe              # Nome do arquivo executável
+EXEC = sistema.exe                          # Nome do arquivo executável
 
 # Regra principal
 all: $(EXEC)
@@ -21,10 +21,10 @@ contabancaria.o: contabancaria.cpp contabancaria.h cliente.h
 cliente.o: cliente.cpp cliente.h
 	$(CC) $(CFLAGS) -c cliente.cpp
 
-# Limpeza dos arquivos gerados (corrigido para Windows)
+# Limpeza dos arquivos gerados (para Windows)
 clean:
 	del /f /q $(OBJ) $(EXEC)
 
 # Rodar o programa após a compilação
 run: $(EXEC)
-	./$(EXEC)
+	$(EXEC)
