@@ -21,7 +21,7 @@ contabancaria.o: contabancaria.cpp contabancaria.h cliente.h
 cliente.o: cliente.cpp cliente.h
 	$(CC) $(CFLAGS) -c cliente.cpp
 
-# Limpeza dos arquivos gerados (para Windows)
+# Limpeza dos arquivos gerados
 clean:
 	del /f /q $(OBJ) $(EXEC)
 
